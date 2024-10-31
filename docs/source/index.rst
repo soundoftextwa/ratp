@@ -1,204 +1,58 @@
-RTA Dubai Bus Journey Planner API
-^^^^^^^^
-Overview
+===============================
+Payment Systems in the UAE
+===============================
 
-The RTA Dubai Bus Journey Planner API provides access to real-time bus schedules and timetables for Dubai's public transportation system. This documentation outlines the available endpoints, request parameters, and response formats for accessing bus timing information.
+The UAE has a diverse set of payment systems designed to cater to various needs, from public transportation to digital payments and banking. This document covers three significant payment options: **FAB Cards**, **Hafilat Cards**, and **Magnati Cards**.
 
-Retrieves the timetable for a specific bus route.
+---------------------------
+1. FAB Cards
+---------------------------
 
-Endpoint
-^^^^^^^^
-::
+**FAB Cards** are issued by First Abu Dhabi Bank (FAB), one of the largest banks in the UAE. These cards offer various financial solutions, including credit, debit, and prepaid cards.
 
-    GET /DownloadTimetableServlet
+**Key Features:**
 
-Query Parameters
-^^^^^^^^^^^^^^^
+- **Wide Range of Options:** FAB offers cards tailored to different financial needs, including platinum, gold, and basic options for credit and debit users.
+- **Rewards Program:** FAB cards often come with reward programs such as cashback, travel points, and exclusive shopping discounts.
+- **Contactless Payments:** Many FAB cards support contactless payments, making transactions faster and more convenient.
+- **Mobile Banking:** FAB cardholders can manage their cards through FAB’s mobile banking app for balance checks, transaction history, and bill payments.
 
-.. list-table::
-   :header-rows: 1
-   :widths: 15 10 10 45 20
+**Usage:**
 
-   * - Parameter
-     - Type
-     - Required
-     - Description
-     - Example
-   * - lineId
-     - string
-     - Yes
-     - Unique identifier for the bus route
-     - dub:01SH1:%20:H:y08
-   * - lineName
-     - string
-     - Yes
-     - Display name of the bus route
-     - bus%20SH1
+FAB cards are accepted at most merchants across the UAE and internationally. They are also widely used for online payments and other financial transactions.
 
-Route ID Format
-^^^^^^^^^^^^^^
-The ``lineId`` parameter follows this format: ``dub:{route_code}:%20:H:y08``
+---------------------------
+2. Hafilat Cards
+---------------------------
 
-* ``dub``: City identifier for Dubai
-* ``route_code``: Specific code for the bus route
-* ``:%20:H:y08``: System-specific suffix
+**Hafilat Cards** are prepaid cards specifically designed for Abu Dhabi’s public transportation system. These cards make it easier and more convenient for residents and visitors to pay for bus fares within the emirate.
 
-Available Routes
-^^^^^^^^^^^^^^
+**Key Features:**
 
-.. list-table::
-   :header-rows: 1
-   :widths: 10 30 20 40
+- **Prepaid and Rechargeable:** Hafilat cards are prepaid and can be recharged at various locations, including bus stations and authorized retailers.
+- **Contactless Technology:** Hafilat cards use contactless technology, allowing for quick and easy bus fare payments.
+- **Discounted Fares:** Different categories of Hafilat cards offer discounted fares for students, senior citizens, and people with special needs.
 
-   * - Route
-     - Line ID
-     - Line Name
-     - Description
-   * - SH1
-     - dub:01SH1:%20:H:y08
-     - bus%20SH1
-     - SH1 Route Service
-   * - D03
-     - dub:01D03:%20:H:y08
-     - bus%20D03
-     - D03 Route Service
-   * - E411
-     - dub:10411:%20:H:y08
-     - bus%20E411
-     - E411 Route Service
-   * - F62
-     - dub:12F62:%20:H:y08
-     - bus%20F62
-     - F62 Route Service
+**Usage:**
 
-Example Request
-^^^^^^^^^^^^^
-.. code-block:: bash
+Passengers simply tap their Hafilat card on the card reader when entering and exiting the bus. The fare is automatically deducted based on the distance traveled.
 
-    curl -X GET "https://www.rta.ae/wps/PA_JourneyPlanner/DownloadTimetableServlet?lineId=dub:01SH1:%20:H:y08&lineName=bus%20SH1"
+---------------------------
+3. Magnati Cards
+---------------------------
 
-Response
-^^^^^^^^
-The API returns a timetable document containing the bus schedule information.
+**Magnati Cards** are digital payment solutions provided by Magnati, a digital payment processor in the UAE. Magnati’s services cater to both businesses and individuals, offering solutions for secure online and in-store payments.
 
-Response Headers
-^^^^^^^^^^^^^^^
-::
+**Key Features:**
 
-    Content-Type: application/pdf
+- **Payment Gateway:** Magnati provides a secure gateway for online payments, helping businesses facilitate transactions.
+- **Multi-currency Support:** Magnati supports transactions in multiple currencies, making it suitable for international transactions.
+- **Flexible Solutions for Businesses:** Magnati offers payment solutions tailored to small businesses and large enterprises, including POS (Point of Sale) systems and digital invoicing.
 
-Error Codes
-^^^^^^^^^^
+**Usage:**
 
-.. list-table::
-   :header-rows: 1
-   :widths: 20 80
+Magnati Cards are versatile, allowing for seamless digital payments both online and in-store. They are used by individuals and businesses alike to make secure transactions.
 
-   * - Status Code
-     - Description
-   * - 200
-     - Success - Timetable retrieved successfully
-   * - 400
-     - Bad Request - Invalid parameters
-   * - 404
-     - Not Found - Route not found
-   * - 500
-     - Internal Server Error - Server-side error occurred
+===============================
 
-Best Practices
--------------
-1. Cache the timetable responses when possible to reduce server load
-2. Implement error handling for failed requests
-3. Include proper timeout handling in your implementation
-4. Use URL encoding for the lineName parameter
-
-Rate Limiting
-------------
-* Default rate limit: Not specified
-* It's recommended to implement reasonable request intervals to avoid overloading the server
-
-Notes
------
-1. The timetable data is provided in PDF format
-2. Timetables may be updated periodically by RTA
-3. All times are in Gulf Standard Time (GST/UTC+4)
-4. Service availability may vary during holidays and special events
-
-Example Implementation
----------------------
-
-JavaScript
-~~~~~~~~~~
-.. code-block:: javascript
-
-    async function getRTABusTimetable(routeCode, routeName) {
-      try {
-        const baseUrl = 'https://www.rta.ae/wps/PA_JourneyPlanner/DownloadTimetableServlet';
-        const lineId = `dub:${routeCode}:%20:H:y08`;
-        const lineName = `bus%20${routeName}`;
-        
-        const response = await fetch(
-          `${baseUrl}?lineId=${lineId}&lineName=${lineName}`,
-          {
-            method: 'GET',
-            headers: {
-              'Accept': 'application/pdf'
-            }
-          }
-        );
-
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-
-        const pdfBlob = await response.blob();
-        return pdfBlob;
-      } catch (error) {
-        console.error('Error fetching timetable:', error);
-        throw error;
-      }
-    }
-
-Python
-~~~~~~
-.. code-block:: python
-
-    import requests
-
-    def get_rta_bus_timetable(route_code, route_name):
-        base_url = 'https://www.rta.ae/wps/PA_JourneyPlanner/DownloadTimetableServlet'
-        
-        params = {
-            'lineId': f'dub:{route_code}:%20:H:y08',
-            'lineName': f'bus%20{route_name}'
-        }
-        
-        try:
-            response = requests.get(base_url, params=params)
-            response.raise_for_status()
-            
-            return response.content
-        except requests.exceptions.RequestException as e:
-            print(f"Error fetching timetable: {e}")
-            raise
-
-    # Example usage
-    try:
-        pdf_content = get_rta_bus_timetable('01SH1', 'SH1')
-        with open('timetable.pdf', 'wb') as f:
-            f.write(pdf_content)
-    except Exception as e:
-        print(f"Failed to download timetable: {e}")
-
-Support and Feedback
--------------------
-For technical support or API-related questions, please contact RTA's technical support team.
-
-Version History
---------------
-* Current Version: 1.0
-* Last Updated: 2024
-
-Legal Notice
------------
-This API documentation is provided for informational purposes. Usage of the `RTA Dubai Bus Timing <https://uaetiming.com/your-complete-guide-to-rta-bus-routes-in-dubai/>`_ and Journey Planner API is subject to RTA's terms of service and data usage policies.
+This overview highlights some of the primary payment systems in the UAE. Whether for banking, transportation, or digital transactions, the UAE's payment infrastructure continues to evolve, providing more convenience and flexibility for users.
