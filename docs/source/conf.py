@@ -2,9 +2,9 @@
 
 # -- Project information
 
-project = 'RTA Dubai API'
-copyright = '2024, Patrick'
-author = 'Patrick'
+project = 'Emirates Project'
+copyright = '2024, Muayed'
+author = 'Muayed'
 
 release = '0.1'
 version = '0.1.0'
