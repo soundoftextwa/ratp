@@ -2,7 +2,7 @@
 API Souq by Emirates NBD
 ===============================
 
-**API Souq** by Emirates NBD is a comprehensive open banking API platform that offers a suite of Application Programming Interfaces (APIs) for developers, businesses, and fintechs. Through API Souq, Emirates NBD provides access to various banking services, enabling seamless integration of financial services into third-party applications.
+**API Souq** by `Emirates NBD <https://www.emiratesnbd.com/en>`_ is a comprehensive open banking API platform that offers a suite of Application Programming Interfaces (APIs) for developers, businesses, and fintechs. Through API Souq, Emirates NBD provides access to various banking services, enabling seamless integration of financial services into third-party applications.
 
 ---------------------------
 Overview
@@ -95,7 +95,7 @@ Class Properties
 Class Methods
 ---------------------------
 
-The `SouqAPIResult` class includes several methods to manage and interpret the API response.
+The `Souq API Result` class includes several methods to manage and interpret the API response.
 
 .. _construct:
     - **Parameters:**
@@ -146,7 +146,7 @@ getCallResult()
     - **Description:** Returns the complete response array from the API, including both metadata and data fields.
 
 ===============================
-SouqAPIResult Usage Example
+Souq API Result Usage Example
 ===============================
 
 The following example demonstrates how to create a `SouqAPIResult` instance and access various response details:
