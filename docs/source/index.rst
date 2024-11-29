@@ -1,3 +1,7 @@
+.. meta::
+    :google-site-verification lang=en:
+        qoIbJvneR1qPFrl5BRBgcN0RggPZzu5QMp6-Bhl0XGg
+
 ===============================
 API Souq by Emirates NBD
 ===============================
