@@ -188,4 +188,11 @@ The following example demonstrates how to create a `SouqAPIResult` instance and 
 
 ===============================
 
-API Souq by Emirates NBD is a robust platform that empowers developers and businesses to create innovative financial solutions. By providing secure and accessible banking APIs, Emirates NBD supports the growth of digital financial services in the UAE, enabling fintechs and businesses to offer a seamless and integrated banking experience.
+API Souq by Emirates NBD is a robust platform that empowers developers and businesses to create innovative financial solutions. By providing secure and accessible banking APIs, `Emirates NBD <https://uaetiming.com/how-to-open-an-nbad-account-in-the-uae/>`_ supports the growth of digital financial services in the UAE, enabling fintechs and businesses to offer a seamless and integrated banking experience.
+
+
+.. toctree::
+   :maxdepth: 2
+   :glob:
+
+   *
