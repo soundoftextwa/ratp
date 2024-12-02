@@ -193,6 +193,5 @@ API Souq by Emirates NBD is a robust platform that empowers developers and busin
 
 .. toctree::
    :maxdepth: 2
-   :glob:
 
-   *
+   verilog/procedure
