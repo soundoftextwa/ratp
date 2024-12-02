@@ -1,7 +1,7 @@
 How to Open a Bank Account in the UAE
 =====================================
 
-Opening a bank account in the UAE is a straightforward process if you meet the requirements and follow the necessary steps. This guide provides a step-by-step procedure for both residents and non-residents.
+Opening a `bank account in the UAE <https://verilogguide.readthedocs.io/>`_ is a straightforward process if you meet the requirements and follow the necessary steps. This guide provides a step-by-step procedure for both residents and non-residents.
 
 Introduction
 ------------
