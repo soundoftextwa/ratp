@@ -195,3 +195,6 @@ API Souq by Emirates NBD is a robust platform that empowers developers and busin
    :maxdepth: 2
 
    verilog/procedure
+   verilog/systemverilog
+   verilog/designs
+   verilog/package
