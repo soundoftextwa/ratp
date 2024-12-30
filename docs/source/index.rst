@@ -30,7 +30,7 @@ ELIT is under the `Apache 2 <http://www.apache.org/licenses/LICENSE-2.0>`_ licen
    :caption: Tools
    
    tools/tokenization
-   tools/morphological_analysis
+   tools/coreference_resolution
    tools/part_of_speech_tagging
    tools/named_entity_recognition
    tools/dependency_parsing
