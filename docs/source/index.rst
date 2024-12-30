@@ -1,3 +1,7 @@
+.. meta::
+    :google-site-verification lang=en:
+        kW3UY7Zm-u45hkilpvVnNqrN3EoKGfdxCShFNwYM4Sw
+
 The ELIT Project
 ================================================
 
