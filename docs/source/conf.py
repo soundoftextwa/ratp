@@ -2,12 +2,12 @@
 
 # -- Project information
 
-project = 'Emirates Project'
-copyright = '2024, Muayed'
-author = 'Muayed'
+project = 'Elit Cloud'
+copyright = '2024, Elit.cloud'
+author = 'Elit.cloud'
 
-release = '0.1'
-version = '0.1.0'
+release = '1.0'
+version = '1.1.0'
 
 # -- General configuration
 
