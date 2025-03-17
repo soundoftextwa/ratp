@@ -1,4 +1,6 @@
-.. _how_to_open_ewallet_in_uae:
+.. meta::
+    :google-site-verification lang=en:
+        MTdDoNVXOS0cgtx8z-Dg4s1vvP2Cqb2XE0nrdgfcm4E
 
 ====================================
 How to Open eWallet in UAE
