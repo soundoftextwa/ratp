@@ -154,3 +154,4 @@ Digital wallets such as eWallet develop into indispensable tools for financial t
    :caption: Quick Start
 
    apps/etisalat
+   apps/payit
