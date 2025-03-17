@@ -33,12 +33,3 @@ html_theme = 'sphinx_rtd_theme'
 
 # -- Options for EPUB output
 epub_show_urls = 'footnote'
-
-.. toctree::
-   :maxdepth: 1
-   :caption: Quick Start
-
-   quick_start/install
-   quick_start/decode_python
-   quick_start/decode_webapi
-   quick_start/train_cli
