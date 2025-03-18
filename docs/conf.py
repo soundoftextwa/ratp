@@ -2,9 +2,9 @@
 
 # -- Project information
 
-project = 'How to Open eWallet in UAE'
-copyright = '2025, Zaid'
-author = 'Zaid'
+project = 'Ligne de bus en France by RATP'
+copyright = '2025, Alex'
+author = 'Alex'
 
 release = '1.0'
 version = '1.0.0'
